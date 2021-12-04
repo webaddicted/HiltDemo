@@ -11,6 +11,9 @@
 
 HiltDemo repository handle all api scenario. Manage all validation DI (Hilt).
 
+## GIF
+<img src="https://github.com/webaddicted/HiltDemo/raw/main/screenshot/funny.webp" width="305">
+
 ##Feature
 
 - [x] Retrofit
@@ -26,10 +29,6 @@ HiltDemo repository handle all api scenario. Manage all validation DI (Hilt).
 - [x] Realtime Location Capture
 - [x]  Whatsapp Message
 - [x]  Phone Call from app
-
-
-## GIF
-<img src="https://github.com/webaddicted/HiltDemo/raw/main/screenshot/funny.gif" width="305">
 
 ## Screens
 - [Home Module](#HomeScreen)
