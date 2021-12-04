@@ -1,32 +1,58 @@
-# Bluestack-Assignment
+# HiltDemo
 
-![Open Issue](https://img.shields.io/github/issues/webaddicted/Bluestack-Assignment)
-![Forks](https://img.shields.io/github/forks/webaddicted/Bluestack-Assignment)
-![Stars](https://img.shields.io/github/stars/webaddicted/Bluestack-Assignment)
-![License](https://img.shields.io/github/license/webaddicted/Bluestack-Assignment)
+![Open Issue](https://img.shields.io/github/issues/webaddicted/HiltDemo)
+![Forks](https://img.shields.io/github/forks/webaddicted/HiltDemo)
+![Stars](https://img.shields.io/github/stars/webaddicted/HiltDemo)
+![License](https://img.shields.io/github/license/webaddicted/HiltDemo)
 
-***You can Install and test latest Bluestack-Assignment app from below 👇***
+***You can Install and test latest Hilt Demo app from below 👇***
 
-[![Bluestack-Assignment](https://img.shields.io/badge/Bluestack%20Assignment-Apk-brightgreen.svg?style=for-the-badge&logo=android)](https://github.com/webaddicted/Bluestack-Assignment/blob/main/apk/app.apk)
+[![HiltDemo](https://img.shields.io/badge/Hilt%20Demo-Apk-brightgreen.svg?style=for-the-badge&logo=android)](https://github.com/webaddicted/HiltDemo/blob/main/apk/app.apk)
 
-Bluestack-Assignment have two page login and Home Page.
+HiltDemo repository handle all api scenario. Manage all validation DI (Hilt).
+
+##Feature
+
+- [x] Retrofit
+- [x] Room Database
+- [x] Form Validation
+- [x] Map Direction
+- [x] Image Capture
+- [x] Scope Storage
+- [x] App Version Check
+- [x] DI(Hilt)
+- [x] Shared ViewModel using Hilt
+- [x] Dynamic Dialog Search
+- [x] Realtime Location Capture
+- [x]  Whatsapp Message
+- [x]  Phone Call from app
 
 
 ## GIF
-<img src="https://github.com/webaddicted/Bluestack-Assignment/raw/main/screenshot/funny.gif" width="305">
+<img src="https://github.com/webaddicted/HiltDemo/raw/main/screenshot/funny.gif" width="305">
 
 ## Screens
-- [Splash Page](#LoginScreen)
-- [Login Module](#LoginScreen)
-- [Home Page](#HomeScreen)
-- [Multi Language support](#HomeScreen)
-- [Pagination](#HomeScreen)
-
-## LoginScreen
-<img src="https://github.com/webaddicted/Bluestack-Assignment/raw/main/screenshot/login.jpg" height="500">
+- [Home Module](#HomeScreen)
+- [Map Module](#MapScreen)
+- [Order Module](#OrderScreen)
+- [Survey Module](#SurveyScreen)
+- [Validation](#ValidationScreen)
 
 ## HomeScreen
-<img src="https://github.com/webaddicted/Bluestack-Assignment/raw/main/screenshot/home.jpg" height="500">
+<img src="https://github.com/webaddicted/HiltDemo/raw/main/screenshot/home.jpg" height="500">
+
+## MapScreen
+<img src="https://github.com/webaddicted/HiltDemo/raw/main/screenshot/map.jpg" height="500">
+
+## OrderScreen
+<img src="https://github.com/webaddicted/HiltDemo/raw/main/screenshot/order.jpg" height="500">
+
+## SurveyScreen
+<img src="https://github.com/webaddicted/HiltDemo/raw/main/screenshot/survey.jpg" height="500">
+
+## ValidationScreen
+<img src="https://github.com/webaddicted/HiltDemo/raw/main/screenshot/validation.jpg" height="500">
+
 
 ## LICENSE
 ```
