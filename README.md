@@ -30,9 +30,10 @@ HiltDemo repository handle all api scenario. Manage all validation DI (Hilt).
 - [x] Shared ViewModel using Hilt
 - [x] Dynamic Dialog Search
 - [x] Realtime Location Capture
-- [x]  Whatsapp Message
-- [x]  Phone Call from app
-- [x]  Pop Back Stack
+- [x] Whatsapp Message
+- [x] Phone Call from app
+- [x] Pop Back Stack
+- [x] Image Upload Using Multipart 
 
 ## Screens
 - [Home Module](#HomeScreen)
