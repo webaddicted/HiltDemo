@@ -15,7 +15,11 @@ HiltDemo repository handle all api scenario. Manage all validation DI (Hilt).
 <!-- <img src="https://github.com/webaddicted/HiltDemo/raw/main/screenshot/funny.webp" width="305"> -->
 
 ## GIF
+<<<<<<< HEAD
 <img src="https://github.com/webaddicted/HiltDemo/raw/main/screenshot/hilt.png" width="305">
+=======
+<img src="https://github.com/webaddicted/HiltDemo/raw/main/screenshot/funny.webp" width="450">
+>>>>>>> 809efe5a17c2d1f8d2bbf63560c1fef416c47a1d
 
 ##Feature
 
