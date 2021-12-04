@@ -32,6 +32,7 @@ HiltDemo repository handle all api scenario. Manage all validation DI (Hilt).
 - [x] Realtime Location Capture
 - [x]  Whatsapp Message
 - [x]  Phone Call from app
+- [x]  Pop Back Stack
 
 ## Screens
 - [Home Module](#HomeScreen)
