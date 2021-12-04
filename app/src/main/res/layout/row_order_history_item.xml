@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+          android:id="@+id/txt_sub_dealer_name"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+          android:padding="8dp"
+          android:text="90/100-10 MILAZE TT 53J"
+          android:textColor="@color/black"
+          android:textSize="16sp" />
+
+        <View
+          android:id="@+id/hor_divider"
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_below="@id/txt_sub_dealer_name"
+          android:layout_marginStart="8dp"
+          android:layout_marginEnd="8dp"
+          android:background="@color/shimmer_placeholder" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/detailsCl"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/hor_divider"
+          android:background="@android:color/white"
+          android:padding="8dp">
+
+          <TextView
+            android:id="@+id/txt_stock_hdr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+            android:text="@string/stock"
+            android:textColor="@color/appBlue"
+            android:textSize="18sp"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+            android:id="@+id/txt_stock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            card_view:layout_constraintBaseline_toBaselineOf="@id/txt_stock_hdr"
+            card_view:layout_constraintEnd_toStartOf="@id/guidelineVer50"
+            card_view:layout_constraintStart_toEndOf="@id/txt_stock_hdr"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+          <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVer50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            card_view:layout_constraintGuide_percent="0.45" />
+
+          <TextView
+            android:id="@+id/txt_order_qty_hdr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+            android:text="@string/order_qty"
+            android:textColor="@color/appBlue"
+            android:textSize="18sp"
+            card_view:layout_constraintStart_toEndOf="@+id/guidelineVer50"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+            android:id="@+id/txt_order_qty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            card_view:layout_constraintBaseline_toBaselineOf="@id/txt_order_qty_hdr"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@+id/txt_order_qty_hdr" />
+
+          <TextView
+            android:id="@+id/txt_price_hdr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+            android:text="@string/price"
+            android:textColor="@color/appBlue"
+            android:textSize="18sp"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/txt_stock" />
+
+          <TextView
+            android:id="@+id/txt_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            card_view:layout_constraintBaseline_toBaselineOf="@id/txt_price_hdr"
+            card_view:layout_constraintEnd_toStartOf="@id/guidelineVer50"
+            card_view:layout_constraintStart_toEndOf="@id/txt_price_hdr"
+            card_view:layout_constraintTop_toBottomOf="@+id/txt_stock" />
+
+          <TextView
+            android:id="@+id/txt_total_price_hdr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+            android:text="@string/total_bill"
+            android:textColor="@color/appBlue"
+            android:textSize="18sp"
+            card_view:layout_constraintBaseline_toBaselineOf="@id/txt_price"
+            card_view:layout_constraintStart_toEndOf="@id/guidelineVer50"
+            card_view:layout_constraintTop_toBottomOf="@id/txt_order_qty" />
+
+          <TextView
+            android:id="@+id/txt_total_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            card_view:layout_constraintBaseline_toBaselineOf="@id/txt_total_price_hdr"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/txt_total_price_hdr"
+            card_view:layout_constraintTop_toBottomOf="@id/txt_order_qty" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+      </RelativeLayout>
+    </layout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:fillViewport="true">
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+              android:id="@+id/card_view"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="8dp"
+              android:background="@android:color/white"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/card_view1"
+              card_view:cardCornerRadius="8dp"
+              card_view:cardElevation="8dp">
+
+              <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                  android:id="@+id/txt_sub_dealer_name"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                  android:padding="8dp"
+                  android:text="90/100-10 MILAZE TT 53J"
+                  android:textColor="@color/appOrange"
+                  android:textSize="18sp" />
+
+                <View
+                  android:id="@+id/hor_divider"
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:layout_below="@id/txt_sub_dealer_name"
+                  android:layout_marginStart="8dp"
+                  android:layout_marginEnd="8dp"
+                  android:background="@color/shimmer_placeholder" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                  android:id="@+id/detailsCl"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/hor_divider"
+                  android:background="@android:color/white"
+                  android:padding="8dp">
+
+                  <TextView
+                    android:id="@+id/txt_route_name_hdr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                    android:text="@string/routes"
+                    android:textColor="@color/appBlue"
+                    android:textSize="18sp"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                  <TextView
+                    android:id="@+id/txt_route_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    card_view:layout_constraintBaseline_toBaselineOf="@id/txt_route_name_hdr"
+                    card_view:layout_constraintEnd_toStartOf="@id/guidelineVer50"
+                    card_view:layout_constraintStart_toEndOf="@id/txt_route_name_hdr"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                  <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineVer50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    card_view:layout_constraintGuide_percent="0.45" />
+
+                  <TextView
+                    android:id="@+id/txt_date_hdr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                    android:text="@string/date"
+                    android:textColor="@color/appBlue"
+                    android:textSize="18sp"
+                    card_view:layout_constraintStart_toEndOf="@+id/guidelineVer50"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                  <TextView
+                    android:id="@+id/txt_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    card_view:layout_constraintBaseline_toBaselineOf="@id/txt_date_hdr"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toEndOf="@+id/txt_date_hdr" />
+
+                  <TextView
+                    android:id="@+id/txt_order_qty_hdr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                    android:text="@string/order_qty"
+                    android:textColor="@color/appBlue"
+                    android:textSize="18sp"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toBottomOf="@+id/txt_route_name" />
+
+                  <TextView
+                    android:id="@+id/txt_order_qty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    card_view:layout_constraintBaseline_toBaselineOf="@id/txt_order_qty_hdr"
+                    card_view:layout_constraintEnd_toStartOf="@id/guidelineVer50"
+                    card_view:layout_constraintStart_toEndOf="@id/txt_order_qty_hdr"
+                    card_view:layout_constraintTop_toBottomOf="@+id/txt_route_name" />
+
+                  <TextView
+                    android:id="@+id/txt_total_price_hdr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                    android:text="@string/total_bill"
+                    android:textColor="@color/appBlue"
+                    android:textSize="18sp"
+                    card_view:layout_constraintBaseline_toBaselineOf="@id/txt_order_qty"
+                    card_view:layout_constraintStart_toEndOf="@id/guidelineVer50"
+                    card_view:layout_constraintTop_toBottomOf="@id/txt_date" />
+
+                  <TextView
+                    android:id="@+id/txt_total_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                    android:text=""
+                    android:textColor="@color/green"
+                    android:textSize="20sp"
+                    card_view:layout_constraintBaseline_toBaselineOf="@id/txt_total_price_hdr"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintStart_toEndOf="@id/txt_total_price_hdr"
+                    card_view:layout_constraintTop_toBottomOf="@id/txt_date" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+              </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+              android:id="@+id/card_view1"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="8dp"
+              android:background="@android:color/white"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/card_view"
+              card_view:cardCornerRadius="8dp"
+              card_view:cardElevation="8dp">
+
+              <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                  android:padding="8dp"
+                  android:background="@color/appOrange"
+                  android:text="@string/product"
+                  android:textColor="@color/white"
+                  android:textSize="18sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                  android:id="@+id/itemRv"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:nestedScrollingEnabled="false" />
+              </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+          </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <ImageView
+          android:id="@+id/loadingTyreIv"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+          android:id="@+id/errorTv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:drawableTop="@drawable/ic_error"
+          android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+          android:gravity="center"
+          android:paddingLeft="15dp"
+          android:paddingRight="15dp"
+          android:text="@string/no_records_found"
+          android:textColor="@color/appBlue"
+          android:textSize="18sp"
+          android:visibility="gone"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </layout>

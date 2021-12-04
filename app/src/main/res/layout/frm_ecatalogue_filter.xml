@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+          android:id="@+id/searchHud"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@android:color/white"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          card_view:cardElevation="8dp">
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+              android:id="@+id/searchTxtInput"
+              style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:hint="@string/search_here">
+
+              <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searchEdtTxt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edt_height"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColor="@color/appBlue"
+                android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+              android:id="@+id/searchButton"
+              android:layout_width="50dp"
+              android:layout_height="45dp"
+              android:layout_marginTop="3dp"
+              android:layout_gravity="center"
+              android:layout_marginLeft="5dp"
+              android:background="@drawable/orange_box"
+              android:src="@drawable/ic_search"
+              app:tint="@color/white" />
+          </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.core.widget.NestedScrollView
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_marginTop="8dp"
+          android:descendantFocusability="blocksDescendants"
+          android:fadeScrollbars="false"
+          android:scrollbars="vertical"
+          card_view:layout_constraintBottom_toBottomOf="parent"
+          card_view:layout_constraintTop_toBottomOf="@id/searchHud">
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+              android:id="@+id/filterCv"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="8dp"
+              android:background="@android:color/white"
+              android:elevation="3dp"
+              android:visibility="gone"
+              card_view:cardCornerRadius="5dp"
+              card_view:cardElevation="8dp">
+
+              <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                  android:id="@+id/filtersLL"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:padding="8dp">
+
+                  <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/seasonSpinner"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="@dimen/card_padding_8"
+                    android:visibility="gone" />
+
+                  <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/vehiclesSp"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="@dimen/card_padding_8"
+                    android:visibility="gone" />
+
+                  <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/modelsSp"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="@dimen/card_padding_8"
+                    android:visibility="gone" />
+
+                  <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/tyreSizeSp"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="@dimen/card_padding_8"
+                    android:visibility="gone" />
+
+                  <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/tyreTypeSp"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="@dimen/card_padding_8"
+                    android:visibility="gone" />
+
+                  <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/usageSp"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="@dimen/card_padding_8"
+                    android:visibility="gone" />
+
+                  <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/fitmentSp"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="@dimen/card_padding_8"
+                    android:visibility="gone" />
+
+                  <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/haulTypSp"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="@dimen/card_padding_8"
+                    android:visibility="gone" />
+
+                  <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/applicationSp"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="@dimen/card_padding_8"
+                    android:visibility="gone" />
+
+                  <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/hpSp"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="@dimen/card_padding_8"
+                    android:visibility="gone" />
+
+                  <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/needSp"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="@dimen/card_padding_8"
+                    android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="right"
+                  android:orientation="horizontal">
+
+                  <Button
+                    android:id="@+id/filterBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="@dimen/card_padding_8"
+                    android:background="@drawable/blue_box_radius"
+                    app:backgroundTint="@color/appOrange"
+                    android:text="@string/filter"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+                  <Button
+                    android:id="@+id/clearFilterBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="@dimen/card_padding_8"
+                    android:background="@drawable/blue_box_radius"
+                    android:text="@string/clear"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+                </LinearLayout>
+              </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/ecatFilterRV"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="@dimen/card_padding_4"
+              android:fadeScrollbars="false"
+              android:scrollbars="vertical" />
+          </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <ImageView
+          android:id="@+id/loadingTyreIv"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+          android:id="@+id/errorTv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:drawableTop="@drawable/ic_error"
+          android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+          android:gravity="center"
+          android:paddingLeft="15dp"
+          android:paddingRight="15dp"
+          android:text="@string/no_records_found"
+          android:textColor="@color/appBlue"
+          android:textSize="18sp"
+          android:visibility="gone"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>

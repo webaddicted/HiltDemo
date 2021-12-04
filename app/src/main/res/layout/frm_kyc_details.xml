@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_bank_name"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/bank_name"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_goneMarginRight="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_bank_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edt_height"
+                        android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                        android:inputType="textCapWords"
+                        android:maxLines="1"
+                        android:maxLength="30"
+                        android:padding="8dp"
+                        android:textColor="@color/appBlue"
+                        android:textSize="18sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_bank_branch"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/bank_branch"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/input_bank_name"
+                    app:layout_goneMarginRight="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_bank_branch"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edt_height"
+                        android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                        android:inputType="textCapCharacters"
+                        android:maxLines="1"
+                        android:maxLength="15"
+                        android:padding="8dp"
+                        android:textColor="@color/appBlue"
+                        android:textSize="18sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_acc_no"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/account_number"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/input_bank_branch"
+                    app:layout_goneMarginRight="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_acc_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edt_height"
+                        android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                        android:inputType="number"
+                        android:maxLength="18"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/appBlue"
+                        android:textSize="18sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_ifsc_code"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/ifsc_code"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/input_acc_no"
+                    app:layout_goneMarginRight="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_ifsc_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edt_height"
+                        android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                        android:inputType="textCapCharacters"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:maxLength="11"
+                        android:textColor="@color/appBlue"
+                        android:textSize="18sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_doc_type1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:focusable="false"
+                    android:hint="@string/select_doc_type1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/input_ifsc_code"
+                    app:layout_goneMarginRight="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_doc_type1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edt_height"
+                        android:drawableRight="@drawable/ic_arrow_down"
+                        android:drawableTint="@color/transparent_orange"
+                        android:focusable="false"
+                        android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/appBlue"
+                        android:textSize="18sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_doc_no1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/doc_no1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/input_doc_type1"
+                    app:layout_goneMarginRight="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_doc_no1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edt_height"
+                        android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                        android:inputType="textCapCharacters"
+                        android:maxLines="1"
+                        android:maxLength="30"
+                        android:padding="8dp"
+                        android:textColor="@color/appBlue"
+                        android:textSize="18sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/txt_doc_img_hdr1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                    android:padding="4dp"
+                    android:text="@string/doc_img"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/input_doc_no1" />
+
+                <include
+                    android:id="@+id/include_doc_type1"
+                    layout="@layout/include_img"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_doc_img_hdr1" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_doc_type2"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="10dp"
+                    android:focusable="false"
+                    android:hint="@string/select_doc_type2"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/include_doc_type1"
+                    app:layout_goneMarginRight="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_doc_type2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edt_height"
+                        android:drawableRight="@drawable/ic_arrow_down"
+                        android:drawableTint="@color/transparent_orange"
+                        android:focusable="false"
+                        android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/appBlue"
+                        android:textSize="18sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_doc_no2"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/doc_no1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/input_doc_type2"
+                    app:layout_goneMarginRight="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_doc_no2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edt_height"
+                        android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                        android:inputType="textCapCharacters"
+                        android:maxLines="1"
+                        android:maxLength="30"
+                        android:padding="8dp"
+                        android:textColor="@color/appBlue"
+                        android:textSize="18sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/txt_doc_img_hdr2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                    android:padding="4dp"
+                    android:text="@string/doc_img"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/input_doc_no2" />
+                <include
+                    android:id="@+id/include_doc_type2"
+                    layout="@layout/include_img"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_doc_img_hdr2" />
+
+                <TextView
+                    android:id="@+id/txt_shop_img_hdr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                    android:padding="4dp"
+                    android:text="@string/shop_img"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/include_doc_type2" />
+
+                <include
+                    android:id="@+id/include_shop_photo"
+                    layout="@layout/include_img"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_shop_img_hdr" />
+
+
+                <Button
+                    android:id="@+id/btn_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="150dp"
+                    android:text="@string/next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/include_shop_photo" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <ImageView
+            android:id="@+id/loadingTyreIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/errorTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableTop="@drawable/ic_error"
+            android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/no_records_found"
+            android:textColor="@color/appBlue"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</layout>

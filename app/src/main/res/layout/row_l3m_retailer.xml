@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/detailsCl"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="5dp"
+      android:layout_toLeftOf="@+id/linear_call"
+      android:layout_toRightOf="@+id/badge"
+      android:background="@android:color/white"
+      android:paddingBottom="8dp">
+
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_10"
+        android:layout_marginRight="@dimen/padding_10"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="@dimen/padding_10"
+        android:paddingBottom="@dimen/padding_10"
+        app:layout_constraintBottom_toTopOf="@+id/seperator"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <TextView
+          android:id="@+id/txt_title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+          android:text="@string/invoice"
+          android:textColor="@color/appBlue"
+          android:textSize="16sp"
+          />
+
+      <TextView
+          android:id="@+id/txt_value"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+          android:text="@string/balance"
+          android:textColor="@color/black"
+          android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/seperator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/shimmer_placeholder"
+        app:layout_constraintTop_toBottomOf="@+id/rel" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

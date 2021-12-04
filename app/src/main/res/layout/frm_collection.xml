@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioGroup
+          android:id="@+id/rgCollectionType"
+          android:layout_width="wrap_content"
+          android:layout_height="40dp"
+          android:orientation="horizontal"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+          <RadioButton
+            android:id="@+id/radioCash"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:buttonTint="@color/appOrange"
+            android:checked="true"
+            android:text="@string/cash"
+            android:textSize="20sp" />
+
+          <RadioButton
+            android:id="@+id/radioCheque"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/appOrange"
+            android:checked="false"
+            android:text="@string/cheque"
+            android:textSize="20sp" />
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_bank_name"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="5dp"
+          android:focusable="false"
+          android:hint="@string/select_bank_name"
+          android:visibility="gone"
+          app:layout_constraintEnd_toStartOf="@+id/guideline"
+          app:layout_constraintRight_toLeftOf="@+id/guideline"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/rgCollectionType">
+
+          <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_bank_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edt_height"
+            android:focusable="false"
+            android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textColor="@color/appBlue"
+            android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/guideline"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_percent="0.50" />
+
+        <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_cheque_date"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="5dp"
+          android:layout_marginRight="8dp"
+          android:focusable="false"
+          android:hint="@string/enter_cheque_date"
+          android:visibility="gone"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintLeft_toRightOf="@+id/guideline"
+          app:layout_constraintStart_toEndOf="@+id/guideline"
+          app:layout_constraintTop_toBottomOf="@+id/rgCollectionType">
+
+          <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_cheque_date"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edt_height"
+            android:focusable="false"
+            android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textColor="@color/appBlue"
+            android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_cheque_no"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:hint="@string/enter_cheque_no"
+          android:visibility="gone"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/input_cheque_date">
+
+          <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_cheque_no"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edt_height"
+            android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+            android:inputType="number"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textColor="@color/appBlue"
+            android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_amt"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:hint="@string/enter_amount"
+          app:layout_constraintEnd_toStartOf="@+id/btn_add"
+          app:layout_constraintRight_toLeftOf="@+id/btn_add"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/input_cheque_no">
+
+          <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_amt"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edt_height"
+            android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+            android:inputType="number"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textColor="@color/appBlue"
+            android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+          android:id="@+id/btn_add"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:text="@string/add"
+          app:layout_constraintBottom_toBottomOf="@+id/input_amt"
+          app:layout_constraintLeft_toRightOf="@+id/input_amt"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/input_cheque_no" />
+        <TextView
+          android:id="@+id/txt_collection_hdr"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="8dp"
+          android:background="@color/appOrange"
+          android:layout_marginBottom="8dp"
+          android:layout_marginTop="5dp"
+          android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+          android:text="@string/collection"
+          android:textColor="@color/white"
+          android:textSize="18sp"
+          android:gravity="center"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/input_amt" />
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/itemRv"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          app:layout_constraintBottom_toTopOf="@+id/btn_submit"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/txt_collection_hdr" />
+
+        <Button
+          android:id="@+id/btn_submit"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginEnd="8dp"
+          android:layout_marginBottom="5dp"
+          android:background="@drawable/fill_round_corner"
+          android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+          android:text="@string/submit"
+          android:textColor="@color/white"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+          android:id="@+id/loadingTyreIv"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+          android:id="@+id/errorTv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:drawableTop="@drawable/ic_error"
+          android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+          android:gravity="center"
+          android:paddingLeft="15dp"
+          android:paddingRight="15dp"
+          android:text="@string/no_records_found"
+          android:textColor="@color/appBlue"
+          android:textSize="18sp"
+          android:visibility="gone"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>

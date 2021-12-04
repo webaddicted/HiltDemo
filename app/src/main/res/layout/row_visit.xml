@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:card_view="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools">
+
+      <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/white"
+        android:descendantFocusability="blocksDescendants"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="5dp">
+
+        <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <View
+            android:id="@+id/statusIndicatorVw"
+            android:layout_width="5dp"
+            android:layout_height="155dp"
+            android:background="@color/red_color" />
+
+          <LinearLayout
+            android:id="@+id/badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="3dp"
+            android:layout_toRightOf="@+id/statusIndicatorVw"
+            android:orientation="vertical">
+
+            <ImageView
+              android:id="@+id/img_location"
+              android:layout_width="30dp"
+              android:layout_height="30dp"
+              android:layout_marginTop="8dp"
+              android:layout_marginBottom="13dp"
+              android:src="@drawable/ic_location_off" />
+
+            <ImageView
+              android:id="@+id/img_kyc"
+              android:layout_width="30dp"
+              android:layout_height="30dp"
+              android:layout_marginBottom="13dp"
+              android:src="@drawable/ic_kyc_not" />
+
+            <ImageView
+              android:id="@+id/img_badge"
+              android:layout_width="30dp"
+              android:layout_height="30dp"
+
+              android:layout_marginBottom="8dp"
+              android:src="@drawable/menu_day_summary" />
+
+          </LinearLayout>
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detailsCl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@+id/linear_call"
+            android:layout_toRightOf="@+id/badge"
+            android:background="@android:color/white"
+            android:paddingBottom="8dp">
+
+
+            <View
+              android:id="@+id/hor_divider"
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:layout_marginStart="8dp"
+              android:layout_marginEnd="8dp"
+              android:background="@color/shimmer_placeholder"
+              card_view:layout_constraintEnd_toEndOf="parent"
+              card_view:layout_constraintStart_toStartOf="parent"
+              card_view:layout_constraintTop_toBottomOf="@id/custNameTv" />
+
+
+            <TextView
+              android:id="@+id/custNameTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+              android:padding="5dp"
+              android:textColor="@color/appBlue"
+              android:textSize="20sp"
+              app:layout_constraintEnd_toEndOf="parent"
+              card_view:layout_constraintStart_toStartOf="parent"
+              card_view:layout_constraintTop_toTopOf="parent"
+              tools:text="Customer Name" />
+
+
+            <TextView
+              android:id="@+id/pendingBillHdrTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="4dp"
+              android:layout_marginEnd="8dp"
+              android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+              android:text="@string/pending_bill"
+              android:textSize="16sp"
+              card_view:layout_constraintEnd_toEndOf="parent"
+              card_view:layout_constraintStart_toStartOf="@+id/guidelineVer50"
+              card_view:layout_constraintTop_toBottomOf="@id/pendingBillTv" />
+
+            <TextView
+              android:id="@+id/pendingBillTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="8dp"
+              android:layout_marginEnd="8dp"
+              android:layout_marginBottom="4dp"
+              android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+              android:textColor="@color/c360DescText"
+              android:textSize="18sp"
+              card_view:layout_constraintEnd_toEndOf="parent"
+              card_view:layout_constraintStart_toStartOf="@+id/guidelineVer50"
+              card_view:layout_constraintTop_toBottomOf="@id/hor_divider"
+              tools:text="Pune" />
+
+            <TextView
+              android:id="@+id/pendingAmtTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="8dp"
+              android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+              android:textColor="@color/c360DescText"
+              android:textSize="18sp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toEndOf="@+id/guidelineVer50"
+              card_view:layout_constraintTop_toBottomOf="@id/pendingBillHdrTv"
+              tools:text="9023456789" />
+
+            <TextView
+              android:id="@+id/pendingAmtHdrTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="4dp"
+              android:layout_marginEnd="8dp"
+              android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+              android:text="@string/pending_amt"
+              android:textSize="16sp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toEndOf="@+id/guidelineVer50"
+              card_view:layout_constraintTop_toBottomOf="@id/pendingAmtTv" />
+
+            <androidx.constraintlayout.widget.Guideline
+              android:id="@+id/guidelineVer50"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              card_view:layout_constraintGuide_percent="0.50" />
+
+            <TextView
+              android:id="@+id/monthlySaleHdrTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="4dp"
+              android:layout_marginEnd="8dp"
+              android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+              android:text="@string/monthly_sales"
+              android:textSize="16sp"
+              card_view:layout_constraintBaseline_toBaselineOf="@id/pendingBillHdrTv"
+              card_view:layout_constraintEnd_toStartOf="@id/guidelineVer50"
+              card_view:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+              android:id="@+id/monthlySaleTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="8dp"
+              android:layout_marginEnd="8dp"
+              android:layout_marginBottom="4dp"
+              android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+              android:textColor="@color/c360DescText"
+              android:textSize="18sp"
+              card_view:layout_constraintBaseline_toBaselineOf="@id/pendingBillTv"
+              card_view:layout_constraintBottom_toBottomOf="parent"
+              card_view:layout_constraintStart_toStartOf="parent"
+              card_view:layout_constraintTop_toBottomOf="@id/hor_divider"
+              tools:text="5000106043" />
+
+
+            5000106043
+
+            <TextView
+              android:id="@+id/mobileTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="8dp"
+              android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+              android:textColor="@color/c360DescText"
+              android:textSize="18sp"
+              app:layout_constraintRight_toRightOf="@+id/guidelineVer50"
+              app:layout_constraintStart_toStartOf="parent"
+              card_view:layout_constraintTop_toBottomOf="@id/monthlySaleHdrTv"
+              tools:text="9023456789" />
+
+            <TextView
+              android:id="@+id/mobileHdrTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="4dp"
+              android:layout_marginEnd="8dp"
+              android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+              android:text="@string/mobile"
+              android:textSize="16sp"
+              app:layout_constraintRight_toRightOf="@+id/guidelineVer50"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/mobileTv" />
+
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+          <LinearLayout
+            android:id="@+id/linear_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+              android:id="@+id/ver_divider"
+              android:layout_width="1dp"
+              android:layout_height="100dp"
+              android:layout_marginStart="8dp"
+              android:layout_marginEnd="8dp"
+              android:background="@color/shimmer_placeholder"
+              android:gravity="center"
+              app:layout_constraintRight_toRightOf="parent"
+              card_view:layout_constraintEnd_toEndOf="parent"
+              card_view:layout_constraintTop_toBottomOf="@id/custNameTv" />
+
+            <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+              <ImageView
+                android:id="@+id/callIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:padding="3dp"
+                android:src="@drawable/ic_c360_call" />
+
+
+              <ImageView
+                android:id="@+id/whatsAppBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/padding_10"
+                android:background="@drawable/green_circle"
+                android:backgroundTint="@color/fern"
+                android:focusable="false"
+                android:padding="4dp"
+                android:src="@drawable/ic_whatsapp"
+                app:tint="@color/white" />
+
+            </LinearLayout>
+          </LinearLayout>
+        </RelativeLayout>
+      </androidx.cardview.widget.CardView>
+    </layout>

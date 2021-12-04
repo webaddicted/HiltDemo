@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:cardBackgroundColor="@color/white"
+          app:cardCornerRadius="15dp">
+
+          <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+              <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.33" />
+
+              <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline66"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.66" />
+
+              <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/appBlue"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                  android:id="@+id/guide33"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  app:layout_constraintGuide_percent="0.33" />
+
+                <androidx.constraintlayout.widget.Guideline
+                  android:id="@+id/guide66"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  app:layout_constraintGuide_percent="0.66" />
+
+                <TextView
+                  android:id="@+id/ratingHdrTv"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                  android:gravity="center"
+                  android:padding="8dp"
+                  android:text="@string/ratings"
+                  android:textColor="@android:color/white"
+                  android:textSize="18sp"
+                  app:layout_constraintEnd_toEndOf="@id/guide33"
+                  app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                  android:id="@+id/tyreName1"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                  android:gravity="center"
+                  android:padding="8dp"
+                  android:text="--"
+                  android:textColor="@android:color/white"
+                  android:textSize="18sp"
+                  app:layout_constraintEnd_toEndOf="@id/guide66"
+                  app:layout_constraintStart_toStartOf="@id/guide33" />
+
+                <TextView
+                  android:id="@+id/tyreName2"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                  android:gravity="center"
+                  android:padding="8dp"
+                  android:text="--"
+                  android:textColor="@android:color/white"
+                  android:textSize="18sp"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="@id/guide66" />
+              </androidx.constraintlayout.widget.ConstraintLayout>
+
+              <ImageView
+                android:id="@+id/tyre1Iv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="8dp"
+                android:src="@drawable/logo"
+                app:layout_constraintDimensionRatio="2:2"
+                app:layout_constraintEnd_toEndOf="@id/guideline66"
+                app:layout_constraintStart_toStartOf="@id/guideline33"
+                app:layout_constraintTop_toBottomOf="@id/headerLayout" />
+
+              <ImageView
+                android:id="@+id/tyre2Iv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="8dp"
+                android:src="@drawable/logo"
+                app:layout_constraintDimensionRatio="2:2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline66"
+                app:layout_constraintTop_toBottomOf="@id/headerLayout" />
+
+              <View
+                android:id="@+id/hor_divider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/shimmer_placeholder"
+                app:layout_constraintTop_toBottomOf="@id/tyre2Iv" />
+
+              <TextView
+                android:id="@+id/gripHdrTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                android:padding="8dp"
+                android:text="@string/grip"
+                android:textColor="@color/appBlue"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/guideline33"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider1" />
+
+              <TextView
+                android:id="@+id/tyreGrip1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/gripHdrTv"
+                app:layout_constraintEnd_toEndOf="@id/guideline66"
+                app:layout_constraintStart_toStartOf="@id/guideline33"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider1" />
+
+              <TextView
+                android:id="@+id/tyreGrip2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/gripHdrTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline66"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider1" />
+
+              <View
+                android:id="@+id/hor_divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/shimmer_placeholder"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/gripHdrTv" />
+
+
+              <TextView
+                android:id="@+id/wetGripHdrTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                android:padding="8dp"
+                android:text="@string/wet_grip"
+                android:textColor="@color/appBlue"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/guideline33"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider2" />
+
+              <TextView
+                android:id="@+id/tyreWetGrip1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/wetGripHdrTv"
+                app:layout_constraintEnd_toEndOf="@id/guideline66"
+                app:layout_constraintStart_toStartOf="@id/guideline33"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider2" />
+
+              <TextView
+                android:id="@+id/tyreWetGrip2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/wetGripHdrTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline66"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider2" />
+
+              <View
+                android:id="@+id/hor_divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/shimmer_placeholder"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/wetGripHdrTv" />
+
+              <TextView
+                android:id="@+id/tyreLyfHdrTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                android:padding="8dp"
+                android:text="@string/tyre_life"
+                android:textColor="@color/appBlue"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/guideline33"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider3" />
+
+              <TextView
+                android:id="@+id/tyreLife1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/tyreLyfHdrTv"
+                app:layout_constraintEnd_toEndOf="@id/guideline66"
+                app:layout_constraintStart_toStartOf="@id/guideline33"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider3" />
+
+              <TextView
+                android:id="@+id/tyreLife2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/tyreLyfHdrTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline66"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider3" />
+
+              <View
+                android:id="@+id/hor_divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/shimmer_placeholder"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tyreLyfHdrTv" />
+
+              <TextView
+                android:id="@+id/strengthHdrTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                android:padding="8dp"
+                android:text="@string/strength_load"
+                android:textColor="@color/appBlue"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/guideline33"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider4" />
+
+              <TextView
+                android:id="@+id/tyreStrengthLoad1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/strengthHdrTv"
+                app:layout_constraintEnd_toEndOf="@id/guideline66"
+                app:layout_constraintStart_toStartOf="@id/guideline33"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider4" />
+
+              <TextView
+                android:id="@+id/tyreStrengthLoad2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/strengthHdrTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline66"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider4" />
+
+              <View
+                android:id="@+id/hor_divider5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/shimmer_placeholder"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/strengthHdrTv" />
+
+              <TextView
+                android:id="@+id/rideHdrTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                android:padding="8dp"
+                android:text="@string/ride_handling"
+                android:textColor="@color/appBlue"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/guideline33"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider5" />
+
+              <TextView
+                android:id="@+id/tyreRide1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/rideHdrTv"
+                app:layout_constraintEnd_toEndOf="@id/guideline66"
+                app:layout_constraintStart_toStartOf="@id/guideline33"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider5" />
+
+              <TextView
+                android:id="@+id/tyreRide2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/rideHdrTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline66"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider5" />
+
+              <View
+                android:id="@+id/hor_divider6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/shimmer_placeholder"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/rideHdrTv" />
+
+              <TextView
+                android:id="@+id/retreadHdrTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                android:padding="8dp"
+                android:text="@string/retreadablity"
+                android:textColor="@color/appBlue"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/guideline33"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider6" />
+
+              <TextView
+                android:id="@+id/tyreRetread1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/retreadHdrTv"
+                app:layout_constraintEnd_toEndOf="@id/guideline66"
+                app:layout_constraintStart_toStartOf="@id/guideline33"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider6" />
+
+              <TextView
+                android:id="@+id/tyreRetread2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/retreadHdrTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline66"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider6" />
+
+              <View
+                android:id="@+id/hor_divider7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/shimmer_placeholder"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/retreadHdrTv" />
+
+              <TextView
+                android:id="@+id/milageHdrTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                android:padding="8dp"
+                android:text="@string/milage"
+                android:textColor="@color/appBlue"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/guideline33"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider7" />
+
+              <TextView
+                android:id="@+id/tyreMilage1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/milageHdrTv"
+                app:layout_constraintEnd_toEndOf="@id/guideline66"
+                app:layout_constraintStart_toStartOf="@id/guideline33"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider7" />
+
+              <TextView
+                android:id="@+id/tyreMilage2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/milageHdrTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline66"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider7" />
+
+              <View
+                android:id="@+id/hor_divider8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/shimmer_placeholder"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/milageHdrTv" />
+
+              <TextView
+                android:id="@+id/loadabilityHdrTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                android:padding="8dp"
+                android:text="@string/loadability"
+                android:textColor="@color/appBlue"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/guideline33"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider8" />
+
+              <TextView
+                android:id="@+id/loadability1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/loadabilityHdrTv"
+                app:layout_constraintEnd_toEndOf="@id/guideline66"
+                app:layout_constraintStart_toStartOf="@id/guideline33"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider8" />
+
+              <TextView
+                android:id="@+id/loadability2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/loadabilityHdrTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline66"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider8" />
+
+              <View
+                android:id="@+id/hor_divider9"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/shimmer_placeholder"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/loadabilityHdrTv" />
+
+              <TextView
+                android:id="@+id/comfortHdrTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                android:padding="8dp"
+                android:text="@string/comfort"
+                android:textColor="@color/appBlue"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/guideline33"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider9" />
+
+              <TextView
+                android:id="@+id/tyreComfort1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/comfortHdrTv"
+                app:layout_constraintEnd_toEndOf="@id/guideline66"
+                app:layout_constraintStart_toStartOf="@id/guideline33"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider9" />
+
+              <TextView
+                android:id="@+id/tyreComfort2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="--"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/comfortHdrTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline66"
+                app:layout_constraintTop_toBottomOf="@id/hor_divider9" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+          </androidx.core.widget.NestedScrollView>
+        </androidx.cardview.widget.CardView>
+      </RelativeLayout>
+    </layout>
+

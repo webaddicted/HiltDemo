@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+      <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@android:color/white"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="8dp">
+
+        <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <TextView
+            android:id="@+id/materialDescTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+            android:padding="8dp"
+            android:text="90/100-10 MILAZE TT 53J"
+            android:textColor="@color/appOrange"
+            android:textSize="18sp" />
+
+          <View
+            android:id="@+id/hor_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/materialDescTv"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/shimmer_placeholder" />
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detailsCl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hor_divider"
+            android:background="@android:color/white"
+            android:padding="8dp">
+
+            <TextView
+              android:id="@+id/tyrePriceTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+              android:text="@string/tyre_price"
+              android:textColor="@color/appBlue"
+              android:textSize="18sp"
+              card_view:layout_constraintStart_toStartOf="parent"
+              card_view:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+              android:id="@+id/tyrePriceDescTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="4dp"
+              android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+              android:text=""
+              android:textColor="@color/appBlue"
+              android:textSize="18sp"
+              card_view:layout_constraintBaseline_toBaselineOf="@id/tyrePriceTv"
+              card_view:layout_constraintEnd_toStartOf="@id/guidelineVer50"
+              card_view:layout_constraintStart_toEndOf="@id/tyrePriceTv"
+              card_view:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+              android:id="@+id/guidelineVer50"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              card_view:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+              android:id="@+id/setTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+              android:text="@string/set_price"
+              android:textColor="@color/appBlue"
+              android:textSize="18sp"
+              card_view:layout_constraintStart_toEndOf="@+id/guidelineVer50"
+              card_view:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+              android:id="@+id/setDescTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="4dp"
+              android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+              android:text=""
+              android:textColor="@color/appBlue"
+              android:textSize="18sp"
+              card_view:layout_constraintBaseline_toBaselineOf="@id/setTv"
+              card_view:layout_constraintEnd_toEndOf="parent"
+              card_view:layout_constraintStart_toEndOf="@+id/setTv" />
+
+            <TextView
+              android:id="@+id/tubeTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="8dp"
+              android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+              android:text="@string/tube_price"
+              android:textColor="@color/appBlue"
+              android:textSize="18sp"
+              card_view:layout_constraintStart_toStartOf="parent"
+              card_view:layout_constraintTop_toBottomOf="@+id/tyrePriceDescTv" />
+
+            <TextView
+              android:id="@+id/tubeDescTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="4dp"
+              android:layout_marginTop="8dp"
+              android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+              android:text=""
+              android:textColor="@color/appBlue"
+              android:textSize="18sp"
+              card_view:layout_constraintBaseline_toBaselineOf="@id/tubeTv"
+              card_view:layout_constraintEnd_toStartOf="@id/guidelineVer50"
+              card_view:layout_constraintStart_toEndOf="@id/tubeTv"
+              card_view:layout_constraintTop_toBottomOf="@+id/tyrePriceDescTv" />
+
+            <TextView
+              android:id="@+id/flapTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="8dp"
+              android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+              android:text="@string/flap_price"
+              android:textColor="@color/appBlue"
+              android:textSize="18sp"
+              card_view:layout_constraintBaseline_toBaselineOf="@id/tubeDescTv"
+              card_view:layout_constraintStart_toEndOf="@id/guidelineVer50"
+              card_view:layout_constraintTop_toBottomOf="@id/setDescTv" />
+
+            <TextView
+              android:id="@+id/flapDescTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="4dp"
+              android:layout_marginTop="8dp"
+              android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+              android:text=""
+              android:textColor="@color/appBlue"
+              android:textSize="18sp"
+              card_view:layout_constraintBaseline_toBaselineOf="@id/flapTv"
+              card_view:layout_constraintEnd_toEndOf="parent"
+              card_view:layout_constraintStart_toEndOf="@id/flapTv"
+              card_view:layout_constraintTop_toBottomOf="@id/setDescTv" />
+
+            <TextView
+              android:id="@+id/npbWithTaxTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+              android:text="@string/set_price"
+              android:textColor="@color/appBlue"
+              android:textSize="18sp"
+              android:visibility="gone"
+              card_view:layout_constraintStart_toStartOf="parent"
+              card_view:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+              android:id="@+id/npbWithTaxDescTv"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="4dp"
+              android:fontFamily="@font/ufonts_com_klavika_regular_opentype"
+              android:text=""
+              android:textColor="@color/appBlue"
+              android:textSize="18sp"
+              android:visibility="gone"
+              card_view:layout_constraintBaseline_toBaselineOf="@id/npbWithTaxTv"
+              card_view:layout_constraintEnd_toStartOf="@id/guidelineVer50"
+              card_view:layout_constraintStart_toEndOf="@id/npbWithTaxTv"
+              card_view:layout_constraintTop_toTopOf="parent" />
+
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+      </androidx.cardview.widget.CardView>
+    </layout>

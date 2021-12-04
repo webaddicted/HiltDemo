@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/appOrange"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <Spinner
+          android:id="@+id/routesSpinner"
+          android:layout_width="match_parent"
+          android:layout_height="40dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:background="@android:color/transparent"
+          android:gravity="center" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:visibility="gone"
+            android:background="@android:color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="8dp">
+
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@android:color/white"
+              android:orientation="vertical"
+              android:padding="8dp">
+
+            <include
+                android:id="@+id/include_zero_bill"
+                layout="@layout/include_outlet_dashboard" />
+
+            <include
+                android:id="@+id/include_sale_val"
+                layout="@layout/include_outlet_dashboard" />
+
+            <include
+                android:id="@+id/include_bill_prod_count"
+                bind:title="Test"
+                layout="@layout/include_outlet_dashboard" />
+            <include
+                android:id="@+id/include_prod_call"
+                bind:title="Test"
+                layout="@layout/include_outlet_dashboard" />
+
+            <include
+                android:id="@+id/include_sales_call"
+                layout="@layout/include_outlet_dashboard" />
+
+            <include
+                android:id="@+id/include_lpc"
+                layout="@layout/include_outlet_dashboard" />
+          </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sale_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:visibility="gone"
+            android:background="@android:color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_view"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="8dp">
+
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@android:color/white"
+              android:orientation="vertical"
+              android:padding="8dp">
+
+            <TextView
+                android:id="@+id/txt_sale_tar_hdr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+                android:textColor="@color/red_color"
+                android:textSize="18sp"
+                android:text="@string/salesman_dashboard_summary" />
+
+            <include
+                android:id="@+id/include_lpd"
+                layout="@layout/include_outlet_dashboard" />
+
+            <include
+                android:id="@+id/include_lpm"
+                layout="@layout/include_outlet_dashboard" />
+
+            <include
+                android:id="@+id/include_sales_lpd"
+                layout="@layout/include_outlet_dashboard" />
+
+            <include
+                android:id="@+id/include_sales_target"
+                layout="@layout/include_outlet_dashboard" />
+          </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/loadingTyreIv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/errorTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_error"
+        android:fontFamily="@font/ufonts_com_klavika_bold_opentype"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/no_records_found"
+        android:textColor="@color/appBlue"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
