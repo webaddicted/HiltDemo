@@ -103,7 +103,7 @@ object LocationHelper {
         isContinue = isContinueFetch
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(mActivity)
         if (locationCallback != null)
-            mFusedLocationClient?.removeLocationUpdates(locationCallback)
+            mFusedLocationClient?.removeLocationUpdates(locationCallback!!)
         locationRequest = LocationRequest.create()
         locationRequest?.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         locationRequest?.interval = (2 * 1000).toLong() // 10 seconds
@@ -112,9 +112,9 @@ object LocationHelper {
 
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {
-                if (locationResult == null) {
-                    return
-                }
+//                if (locationResult == null) {
+//                    return
+//                }
                 for (location in locationResult.locations) {
                     if (location != null) {
                         wayLatitude = location.latitude
@@ -151,7 +151,7 @@ object LocationHelper {
 //              txtContinueLocation.setText(stringBuilder.toString())
                         }
                         if (!isContinue && mFusedLocationClient != null) {
-                            mFusedLocationClient?.removeLocationUpdates(locationCallback)
+                            locationCallback?.let { mFusedLocationClient?.removeLocationUpdates(it) }
                         }
                     }
                 }
@@ -168,7 +168,10 @@ object LocationHelper {
         clickListener: (status: ApiResponse.Status, latLong: String, errorMsg: String) -> Unit
     ) {
         if (isContinue) {
-            mFusedLocationClient?.requestLocationUpdates(locationRequest, locationCallback, null)
+            locationCallback?.let {
+                mFusedLocationClient?.requestLocationUpdates(locationRequest!!,
+                    it, null!!)
+            }
         } else {
             mFusedLocationClient?.lastLocation?.addOnSuccessListener(mActivity) { location ->
                 if (location != null) {
@@ -193,9 +196,9 @@ object LocationHelper {
 //          }
                 } else {
                     mFusedLocationClient.requestLocationUpdates(
-                        locationRequest,
-                        locationCallback,
-                        null
+                        locationRequest!!,
+                        locationCallback!!,
+                        null!!
                     )
                 }
             }
@@ -204,7 +207,7 @@ object LocationHelper {
 
     @SuppressLint("MissingPermission")
     private fun callRequest() {
-        mFusedLocationClient?.requestLocationUpdates(locationRequest, locationCallback, null)
+        mFusedLocationClient?.requestLocationUpdates(locationRequest!!, locationCallback!!, null!!)
     }
 
 

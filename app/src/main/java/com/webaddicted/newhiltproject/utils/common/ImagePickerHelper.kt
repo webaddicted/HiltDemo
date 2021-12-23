@@ -55,34 +55,26 @@ object ImagePickerHelper {
             })
     }
 
-    private fun openIntentChooser(mActivity: Activity) {
+    private fun openIntentChooser(activity: Activity) {
         val takePicture = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-
         try {
-            val photoFile = createImgFile(mActivity)
-
+            val photoFile = createImgFile(activity)
             selectedImgUri = FileProvider.getUriForFile(
-                mActivity, mActivity.packageName + ".fileprovider",
+                activity, activity.packageName + ".provider",
                 photoFile
             )
             takePicture.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
             takePicture.flags = Intent.FLAG_GRANT_WRITE_URI_PERMISSION
             takePicture.putExtra(MediaStore.EXTRA_OUTPUT, selectedImgUri)
-
-            val pickPhoto = Intent(
-                Intent.ACTION_PICK,
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI
-            )
-
-            val chooser =
-                Intent.createChooser(pickPhoto, mActivity.getString(R.string.upload_photo))
+            val pickPhoto = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            val chooser = Intent.createChooser(pickPhoto, activity.getString(R.string.upload_photo))
             chooser.putExtra(Intent.EXTRA_INITIAL_INTENTS, arrayOf(takePicture))
-            mActivity.startActivityForResult(chooser, ImgPickerType.CHOOSER_CAMERA_GALLERY.value)
+            activity.startActivityForResult(chooser, ImgPickerType.CHOOSER_CAMERA_GALLERY.value)
         } catch (e: IOException) {
             GlobalUtils.logPrint(msg = e.toString())
             DialogUtils.showDialog(
-                mActivity,
-                message = mActivity.getString(R.string.something_went_wrong) + e.toString()
+                activity,
+                message = activity.getString(R.string.something_went_wrong) + e.toString()
             )
         }
     }
@@ -99,7 +91,12 @@ object ImagePickerHelper {
                         postCropImg(mActivity, data, resultCode)
                     } else {
                         isCamera = true
-                        performCrop(mActivity)
+                        val imageBitmap = getGooglePhoto(mActivity, selectedImgUri)
+                        mPerpermissionListener?.onSuccess(
+                            getFile(mActivity, imageBitmap)!!,
+                            imageBitmap
+                        )
+//                        performCrop(mActivity)
                     }
                 }
             }

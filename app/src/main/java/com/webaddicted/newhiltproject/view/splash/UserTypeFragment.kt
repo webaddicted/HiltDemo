@@ -1,10 +1,12 @@
 package com.webaddicted.newhiltproject.view.splash
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.databinding.ViewDataBinding
 import com.webaddicted.newhiltproject.BuildConfig
 import com.webaddicted.newhiltproject.R
+import com.webaddicted.newhiltproject.Test
 import com.webaddicted.newhiltproject.databinding.FrmUserTypeBinding
 import com.webaddicted.newhiltproject.view.base.BaseFragment
 import com.webaddicted.newhiltproject.view.home.HomeActivity
@@ -13,6 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class UserTypeFragment : BaseFragment(R.layout.frm_user_type) {
     private lateinit var mBinding: FrmUserTypeBinding
+
     companion object {
         val TAG = UserTypeFragment::class.qualifiedName
         fun getInstance(bundle: Bundle): UserTypeFragment {
@@ -46,10 +49,12 @@ class UserTypeFragment : BaseFragment(R.layout.frm_user_type) {
 //                val baseUrl = "https://dev2021-hilt.cs5.force.com/hiltforce/"
 //               val baseUrl = "https://proddmsuat-hilt.cs57.force.com/hiltforce/"
 
-
                 HomeActivity.newIntent(mActivity)
+                Log.d("TAG","Is Balanceed : "+Test.hexadecimalModulus())
+
             }
         }
     }
+
 
 }
