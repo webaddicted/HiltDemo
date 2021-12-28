@@ -45,12 +45,12 @@ class UserTypeFragment : BaseFragment(R.layout.frm_user_type) {
         super.onClick(v)
         when (v.id) {
             R.id.salesmanBtn -> {
-                val baseUrl = BuildConfig.BASE_URL.dropLast(1)
+//                val baseUrl = BuildConfig.BASE_URL.dropLast(1)
 //                val baseUrl = "https://dev2021-hilt.cs5.force.com/hiltforce/"
 //               val baseUrl = "https://proddmsuat-hilt.cs57.force.com/hiltforce/"
 
                 HomeActivity.newIntent(mActivity)
-                Log.d("TAG","Is Balanceed : "+Test.hexadecimalModulus())
+                Log.d("TAG","Is Balanced : ")
 
             }
         }

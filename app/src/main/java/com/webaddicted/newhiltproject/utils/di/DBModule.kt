@@ -20,7 +20,7 @@ object DBModule {
     fun provideYourDatabase(@ApplicationContext context: Context) =
         Room.databaseBuilder(
             context,
-            AppDatabase::class.java,
+            AppDatabase::class.java,//abstract class all DAO mention in this file
             ApiConstant.DB_NAME
         )
 //            .addMigrations(MIGRATION_1_2)

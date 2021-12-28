@@ -24,7 +24,7 @@ object ApplicationModule {
 
     @Provides
     @Singleton
-    fun getRetrofit(@ApplicationContext context: Context): Retrofit {
+        fun getRetrofit(@ApplicationContext context: Context): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
@@ -33,7 +33,7 @@ object ApplicationModule {
             .build()
     }
 
-    private fun provideOkHttpClient(context: Context): OkHttpClient {
+        private fun provideOkHttpClient(context: Context): OkHttpClient {
         val okHttpClientBuilder = OkHttpClient.Builder()
         okHttpClientBuilder.connectTimeout(ApiConstant.API_TIME_OUT, TimeUnit.SECONDS)
         okHttpClientBuilder.readTimeout(ApiConstant.API_TIME_OUT, TimeUnit.SECONDS)
