@@ -12,7 +12,6 @@ import com.webaddicted.newhiltproject.view.base.BaseFragment
 import com.webaddicted.newhiltproject.view.home.HomeActivity
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class UserTypeFragment : BaseFragment(R.layout.frm_user_type) {
     private lateinit var mBinding: FrmUserTypeBinding
 
