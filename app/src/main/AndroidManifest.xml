@@ -51,7 +51,7 @@
         tools:replace="android:allowBackup">
 
         <activity
-            android:name=".view.splash.SplashActivity"
+            android:name=".view.splash.WelcomeActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
