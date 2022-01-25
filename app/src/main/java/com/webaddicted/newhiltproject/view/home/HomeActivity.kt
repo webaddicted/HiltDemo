@@ -29,10 +29,9 @@ import com.webaddicted.newhiltproject.utils.constant.AppConstant
 import com.webaddicted.newhiltproject.view.base.BaseActivity
 import com.webaddicted.newhiltproject.view.ecatalogue.ECatalogueHomeFragment
 import com.webaddicted.newhiltproject.view.pricelist.PriceVisibilityFragment
-import com.webaddicted.newhiltproject.view.splash.SplashActivity
+import com.webaddicted.newhiltproject.view.splash.WelcomeActivity
 import com.webaddicted.newhiltproject.view.subdealer.GeneralInfoFragment
 import com.webaddicted.newhiltproject.view.visit.beat.VisitFragment
-import com.webaddicted.newhiltproject.view.visit.orderhistory.OrderHistoryListFragment
 import com.webaddicted.newhiltproject.viewmodel.HomeViewModel
 import java.util.*
 
@@ -164,7 +163,7 @@ class HomeActivity : BaseActivity(R.layout.activity_home) {
                     Glide.with(this).load(R.raw.loader).into(DrawableImageViewTarget(it))
                 }
                 homeViewModel.clearPref()
-                SplashActivity.newClearLogin(this)
+                WelcomeActivity.newClearLogin(this)
             }
         }
     }
