@@ -18,7 +18,6 @@ import com.webaddicted.newhiltproject.view.home.HomeActivity
 import com.webaddicted.newhiltproject.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class SplashFragment : BaseFragment(R.layout.frm_splash) {
       private lateinit var userInfo: UserModel
       private lateinit var mBinding: FrmSplashBinding
