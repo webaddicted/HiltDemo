@@ -163,7 +163,7 @@ abstract class BaseActivity(private val layoutId: Int) : AppCompatActivity(), Vi
         observer: Observer<ApiResponse<T>>
     ) {
         observe(lifecycleOwner, object : Observer<ApiResponse<T>> {
-            override fun onChanged(t: ApiResponse<T>?) {
+            override fun onChanged(t: ApiResponse<T>) {
                 observer.onChanged(t)
                 if (t?.status != ApiResponse.Status.LOADING)
                     removeObserver(this)
@@ -173,7 +173,7 @@ abstract class BaseActivity(private val layoutId: Int) : AppCompatActivity(), Vi
 
     fun <T> LiveData<ApiResponse<T>>.observeOnce(observer: Observer<ApiResponse<T>>) {
         observeForever(object : Observer<ApiResponse<T>> {
-            override fun onChanged(t: ApiResponse<T>?) {
+            override fun onChanged(t: ApiResponse<T>) {
                 observer.onChanged(t)
                 if (t?.status != ApiResponse.Status.LOADING)
                     removeObserver(this)
